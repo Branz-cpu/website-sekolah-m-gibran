@@ -1,0 +1,303 @@
+/* RESET DAN VARIABLE */
+\* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --warna-utama: #1e3a8a;
+  --warna-aksen: #f59e0b;
+  --warna-teks: #1f2937;
+  --warna-abu: #f3f4f6;
+  --putih: #ffffff;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  color: var(--warna-teks);
+  line-height: 1.7;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; }
+
+.gibran_container { width: 90%; max-width: 1100px; margin: 0 auto; }
+.gibran_center { text-align: center; margin-bottom: 25px; }
+
+/* HEADER */
+#gibran_header {
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  background: var(--putih);
+  z-index: 100;
+  transition: box-shadow .3s;
+}
+#gibran_header.gibran_bayangan { box-shadow: 0 2px 12px rgba(0,0,0,.15); }
+
+.gibran_navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+.gibran_logo { font-size: 1.3rem; font-weight: 700; color: var(--warna-utama); }
+
+.gibran_menu { display: flex; gap: 25px; }
+.gibran_menu a { font-weight: 500; padding: 5px 0; border-bottom: 2px solid transparent; transition: .3s; }
+.gibran_menu a:hover,
+.gibran_menu a.gibran_active { color: var(--warna-utama); border-bottom-color: var(--warna-aksen); }
+
+.gibran_toggle { display: none; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: var(--warna-utama); }
+
+/* HERO */
+.gibran_hero {
+  background:
+    linear-gradient(rgba(30,58,138,.85), rgba(30,58,138,.85)),
+    url("https://picsum.photos/seed/hero-sekolah/1600/900") center/cover no-repeat;
+  color: var(--putih);
+  padding: 150px 0 60px;
+}
+.gibran_hero_isi { max-width: 700px; margin-left: 5%; }
+.gibran_subjudul { color: var(--warna-aksen); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.gibran_hero h1 { font-size: 2.8rem; line-height: 1.2; margin: 10px 0 15px; }
+.gibran_hero_isi p { margin-bottom: 25px; }
+
+.gibran_tombol {
+  display: inline-block;
+  background: var(--warna-aksen);
+  color: #111;
+  padding: 12px 28px;
+  border: 2px solid var(--warna-aksen);
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: .3s;
+  margin-right: 10px;
+}
+.gibran_tombol:hover { transform: translateY(-3px); box-shadow: 0 6px 14px rgba(0,0,0,.25); }
+.gibran_tombol_outline { background: transparent; color: var(--putih); border-color: var(--putih); }
+
+.gibran_statistik {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 60px;
+  text-align: center;
+}
+.gibran_stat { background: rgba(255,255,255,.15); padding: 20px; border-radius: 12px; }
+.gibran_stat h3 { font-size: 2.2rem; color: var(--warna-aksen); }
+
+
+/* SECTION UMUM */
+.gibran_section { padding: 80px 0; }
+.gibran_abu { background: var(--warna-abu); }
+.gibran_judul_section {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--warna-utama);
+  margin-bottom: 40px;
+}
+.gibran_judul_section::after {
+  content: "";
+  display: block;
+  width: 70px; height: 4px;
+  background: var(--warna-aksen);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+
+/* GRID */
+.gibran_grid_2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.gibran_grid_3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+.gibran_grid_4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+
+/* PROFILE */
+.gibran_kotak_gambar {
+  height: 320px;
+  background: #dbeafe;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,.15);
+}
+.gibran_kotak_gambar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+#gibran_profil h3 { color: var(--warna-utama); margin: 12px 0 4px; }
+.gibran_daftar li { padding-left: 25px; position: relative; }
+.gibran_daftar li::before { content: "✔"; position: absolute; left: 0; color: var(--warna-aksen); }
+
+
+/* KARTU PROGRAM */
+.gibran_kartu {
+  background: var(--putih);
+  padding: 30px 25px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  transition: .3s;
+}
+.gibran_kartu:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0,0,0,.15); }
+.gibran_ikon { font-size: 3rem; display: block; margin-bottom: 10px; }
+.gibran_kartu h3 { color: var(--warna-utama); margin-bottom: 8px; }
+
+/* BERITA */
+.gibran_berita { background: var(--putih); border-radius: 14px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,.1); transition: .3s; }
+.gibran_berita:hover { transform: translateY(-6px); }
+.gibran_gambar_berita { height: 180px; overflow: hidden; background: #e5e7eb; }
+.gibran_gambar_berita img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s;
+}
+.gibran_berita:hover .gibran_gambar_berita img { transform: scale(1.1); }
+.gibran_isi_berita { padding: 20px; }
+.gibran_isi_berita small { color: #6b7280; }
+.gibran_isi_berita h3 { margin: 6px 0; color: var(--warna-utama); font-size: 1.1rem; }
+
+/* Warna gradasi dipakai berita dan galeri */
+.andi_warna1 { background: linear-gradient(135deg, #fde68a, #f59e0b); }
+.andi_warna2 { background: linear-gradient(135deg, #a7f3d0, #10b981); }
+.andi_warna3 { background: linear-gradient(135deg, #bfdbfe, #3b82f6); }
+.andi_warna4 { background: linear-gradient(135deg, #fecaca, #ef4444); }
+.andi_warna5 { background: linear-gradient(135deg, #ddd6fe, #8b5cf6); }
+.andi_warna6 { background: linear-gradient(135deg, #fbcfe8, #ec4899); }
+
+/* GALERI */
+.gibran_galeri { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.gibran_item_galeri {
+  height: 210px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #e5e7eb;
+  transition: .3s;
+}
+.gibran_item_galeri img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.gibran_item_galeri:hover { transform: scale(1.04); box-shadow: 0 8px 20px rgba(0,0,0,.3); }
+
+
+
+/* MODAL */
+.gibran_modal {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.88);
+  z-index: 200;
+  flex-direction: column;
+  align-items: center; justify-content: center;
+  color: var(--putih);
+}
+.gibran_modal.gibran_tampil { display: flex; }
+.gibran_modal_isi { width: 90%; max-width: 800px; height: 60vh; }
+.gibran_modal_isi img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 14px;
+}
+.gibran_tutup { position: absolute; top: 20px; right: 35px; font-size: 3rem; cursor: pointer; }
+#gibran_modal_judul { margin-top: 15px; font-size: 1.2rem; }
+
+/* FASILITAS */
+.gibran_fasilitas {
+  background: var(--warna-abu);
+  text-align: center;
+  padding: 30px 15px;
+  border-radius: 14px;
+  transition: .3s;
+}
+.gibran_fasilitas span { font-size: 2.8rem; display: block; }
+.gibran_fasilitas:hover { background: var(--warna-utama); color: var(--putih); transform: translateY(-5px); }
+
+
+
+/* KONTAK */
+.gibran_info_kontak h3 { color: var(--warna-utama); margin-bottom: 15px; }
+.gibran_info_kontak p { margin-bottom: 12px; }
+
+.gibran_form {
+  background: var(--putih);
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.1);
+}
+.gibran_form label { display: block; font-weight: 600; margin: 12px 0 4px; }
+.gibran_form input,
+.gibran_form select,
+.gibran_form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+.gibran_form input:focus,
+.gibran_form textarea:focus,
+.gibran_form select:focus { outline: 2px solid var(--warna-aksen); border-color: transparent; }
+.gibran_form .gibran_tombol { margin-top: 18px; }
+.gibran_error { color: #dc2626; display: block; min-height: 18px; }
+.gibran_sukses { color: #059669; font-weight: 600; margin-top: 12px; }
+
+
+/* FOOTER DAN TO<BOL ATAS */
+#gibran_footer { background: #111827; color: #d1d5db; text-align: center; padding: 25px 10px; }
+
+.gibran_top {
+  position: fixed; bottom: 25px; right: 25px;
+  width: 46px; height: 46px;
+  background: var(--warna-aksen);
+  border-radius: 50%;
+  display: none;
+  align-items: center; justify-content: center;
+  font-size: 1.4rem; font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,.3);
+  z-index: 90;
+}
+.gibran_top.gibran_show { display: flex; }
+
+/* ANIMASI MUNCUL */
+.gibran_js .gibran_reveal { opacity: 0; transform: translateY(40px); transition: all .7s ease; }
+.gibran_js .gibran_reveal.gibran_muncul { opacity: 1; transform: translateY(0); }
+
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .gibran_grid_3 { grid-template-columns: repeat(2, 1fr); }
+  .gibran_grid_4 { grid-template-columns: repeat(2, 1fr); }
+  .gibran_statistik { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 700px) {
+  .gibran_toggle { display: block; }
+  .gibran_menu {
+    display: none;
+    position: absolute;
+    top: 70px; left: 0; width: 100%;
+    background: var(--putih);
+    flex-direction: column;
+    gap: 0;
+    box-shadow: 0 8px 12px rgba(0,0,0,.1);
+  }
+  .gibran_menu.gibran_open { display: flex; }
+  .gibran_menu li { padding: 12px 5%; border-top: 1px solid #eee; }
+
+  .gibran_hero h1 { font-size: 2rem; }
+  .gibran_hero_isi { margin-left: 0; }
+  .gibran_grid_2, .gibran_grid_3, .gibran_galeri { grid-template-columns: 1fr; }
+}
+
